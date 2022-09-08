@@ -10,6 +10,11 @@ function App() {
   const [symbol, setSymbol] = useState(false)
   const [lenght, setLenght] = useState(15)
 
+  function clipBoard(){
+    navigator.clipboard.writeText(password)
+    alert('Copied')
+  }
+
 
   function generate(){
     const gerar_aleatorio = () => {
@@ -60,6 +65,7 @@ function App() {
       <p>Symbol</p>
       </Flex>
       <Button onClick={generate}>Gerar</Button>
+      <button onClick={() => clipBoard()}>Copy</button>
       <GlobalStyles/>
     </Container>
   )
